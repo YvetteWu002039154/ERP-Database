@@ -11,7 +11,7 @@ SELECT d.DEPARTMENT_ID AS ID,
        COALESCE(d.DEPARTMENT_NAME, 'N/A')                AS DEPARTMENT_NAME,
        NVL(d.BUDGET,0)                                   AS DEPARTMENT_BUDGET,
        NVL(s.total_sales,0)                              AS TOTAL_SALES_AMOUNT,
-       NVL(s.total_sales,0) - NVL(d.BUDGET,0)            AS PROFIT
+       NVL(s.total_sales,0) - NVL(d.BUDGET,0)            AS REVENUE
 FROM DEPARTMENT d
 LEFT JOIN (
   SELECT dept_id, SUM(total_amount) AS total_sales
